@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="logo" href="#logo">
+                <img src="{% static 'image/logo.png' %}" alt="image">
+            </a>
+            <button class="signup" href="#contact">SIGN UP</button>
+            <a class="signin" href="#about">SIGN IN</a>
+        </div>
+        <div class="pokemon">
+        <p>Recherchez un Pokemon</p>
+        <input type="text">
+        </div>
+    </body>
+</html>
+

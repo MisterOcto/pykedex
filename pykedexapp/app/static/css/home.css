@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Press+Start+2P&display=swap');
+ body {
+    background-color: #A76464;
+  }
+  
+  .topnav {
+    background-color: #A76464;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    
+    color: #f2f2f2;
+    
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .topnav .signin{
+    float: right;
+    border: 6px solid rgb(183, 166, 33);
+    border-radius: 10px;
+    background-color: maroon;
+    color: aliceblue;
+    font-family: 'Koulen';
+
+  }
+
+  .topnav .signup{
+    float: right;
+    border: 6px solid rgb(183, 166, 33);
+    border-radius: 10px;
+    background-color: maroon;
+    color: aliceblue;
+    font-family: 'Koulen';
+  }
+  .topnav .logo{
+    float: left;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #A76464;
+    color: #A76464;
+  }
+ 
+  .logo img {
+    width: 100px;
+    height: auto;
+  }
+
+  p {
+    color: aliceblue;
+    text-align: center;
+    font-family: 'Press Start 2P';
+  }
+
+  .pokemon{
+    display: flex;
+    justify-content: center;
+  }
