@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
+body {
+    background-image: url('/static/image/pokemon-background.webp');
+    
+    background-size: 100%;
+}
+
+button {
+    font-family: 'Press Start 2P';
+    margin-left: 44%;
+    margin-top: 50vh;
+    color: gold;
+    background-color: saddlebrown;
+    padding: 20px 100px;
+    border: none;
+ 
+}
+
+.container h1{
+    color: #560505;
+    background-color: #D7CFCF;
+    border: 8px solid #C43535;
+    font-family: 'Press Start 2P';
+    text-align: center;
+    padding: 20px;
+    margin: 90px;
+}

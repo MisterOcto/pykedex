@@ -13,3 +13,11 @@ class PokemonViewSet(viewsets.ModelViewSet):
 def home(request):
   template = loader.get_template('home.html')
   return HttpResponse(template.render())
+
+def menu(request):
+  template = loader.get_template('menu.html')
+  return HttpResponse(template.render())
+
+def signup(request):
+  template = loader.get_template('signup.html')
+  return HttpResponse(template.render())

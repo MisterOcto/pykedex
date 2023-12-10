@@ -17,9 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from app.views import home
+from app.views import menu
+from app.views import signup
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('api/', include('app.urls')),  # Point d'entrée de l'API
-    path('home', home)
+    path('home', home),
+    path('menu', menu),
+    path('signup', signup)
 ]
