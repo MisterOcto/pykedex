@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
+body {
+    background-color: black;
+    background-size: 100%;
+}
+
+a {
+    text-decoration: none;
+    font-family: 'Press Start 2P';
+    font-size: 25px;
+    margin-left: 42%;
+    color: gold;
+    background-color: saddlebrown;
+    padding: 20px 100px;
+    border: none;
+    border-radius: 20px;
+ 
+}
+
+.container h1{
+    color: #560505;
+    background-color: #D7CFCF;
+    border: 8px solid #C43535;
+    font-family: 'Press Start 2P';
+    font-size: 60px;
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-right: 80px;
+    padding-left: 80px;
+    margin-top: 15vh;
+    margin-left: 600px;
+    margin-right: 600px;
+}
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
