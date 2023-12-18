@@ -21,9 +21,3 @@ def signin(request):
   template = loader.get_template('signin.html')
   return HttpResponse(template.render())
 
-
-# TODO: POKEMON CONTROLLER
-
-# TODO: USER CONTROLLER
-
-# TODO: TEAM CONTROLLER
