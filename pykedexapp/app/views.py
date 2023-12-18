@@ -2,13 +2,9 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
 from rest_framework import viewsets
-from .models import Pokemon
 from .serializers import PokemonSerializer
 
 
-class PokemonViewSet(viewsets.ModelViewSet):
-    queryset = Pokemon.objects.all()
-    serializer_class = PokemonSerializer
 
 def home(request):
   template = loader.get_template('home.html')
@@ -21,3 +17,10 @@ def menu(request):
 def signup(request):
   template = loader.get_template('signup.html')
   return HttpResponse(template.render())
+
+
+# TODO: POKEMON CONTROLLER
+
+# TODO: USER CONTROLLER
+
+# TODO: TEAM CONTROLLER
