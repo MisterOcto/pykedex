@@ -16,10 +16,3 @@ def menu(request):
 def signup(request):
   template = loader.get_template('signup.html')
   return HttpResponse(template.render())
-
-
-# TODO: POKEMON CONTROLLER
-
-# TODO: USER CONTROLLER
-
-# TODO: TEAM CONTROLLER
