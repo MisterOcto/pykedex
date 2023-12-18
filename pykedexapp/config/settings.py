@@ -52,7 +52,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "pykedexapp.urls"
+ROOT_URLCONF = "config.urls"
 
 TEMPLATES = [
     {
