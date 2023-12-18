@@ -74,8 +74,9 @@ input{
   color: aliceblue;
   border: 8px solid #924f4f;
   background-color: #562525;
-  width: 30vw;
-  height: 20vh;
+  width: 100%;
+ max-width: 600px;
+ min-height: 200px;
   margin-top: 20vh;
   border-radius: 16px;
   position: relative;
@@ -95,7 +96,7 @@ input{
   color: aliceblue;
   text-align: center;
   font-family: 'Press Start 2P';
-  font-size: 30px;
+  font-size: 3vh;
 }
 
 h1 {

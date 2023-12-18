@@ -26,7 +26,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('api/', include('app.urls')),  # Point d'entrée de l'API
     path('home', home),
-    path('menu', menu),
+    path('', menu),
     path('signup', signup),
     path('signin', signin)
 

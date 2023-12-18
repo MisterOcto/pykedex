@@ -12,8 +12,9 @@ body {
 
   border: 8px solid #56855A;
   background-color: #9FC399;
-  width: 400px;
-  height: 500px;
+  width: 100%;
+ max-width: 500px;
+ min-height: 530px;
   margin: auto;
   margin-top: 20vh;
   border-radius: 16px;
