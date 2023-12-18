@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="logo" href="#logo">
+                <img src="{% static 'image/logo.png' %}" alt="image">
+            </a>   
+            <a class="signin" href="#about">SIGN IN</a>
+            <a class="signup" href="#about">SIGN UP</a>
+        </div>
+        
+        <div class="pokemon">
+        <p class="search">Recherchez un Pokemon</p>
+        <input type="text">
+        </div>
+        <div class="card">
+            <div class="image"></div>
+            <div class="content">
+                
+                <h1>SALAMECHE</h1>
+                <div class="button-container">
+                    <button class="poison">Poison</button>
+                    <button class="sol">Sol</button>
+                </div>
+            </div>
+            <div class="content-lvl">
+                <p class="level">36 .LVL</p>
+                <p class="hp">50/120 .HP</p>
+            </div>   
+            <div class="progress-bar">
+                <progress value="32" max="100"> 32% </progress>
+            </div>
+        </div>
+    </body>
+</html>
+
