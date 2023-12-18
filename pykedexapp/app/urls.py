@@ -7,4 +7,8 @@ router.register(r'pokemons', PokemonViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
+    # TODO: POKEMON ROUTES
+    # TODO: USERS && AUTH ROUTES
+    # TODO: TEAMS ROUTES
+
 ]
