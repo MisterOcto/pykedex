@@ -24,7 +24,7 @@ from app.views import signin
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('api/app/', include('app.urls')),  # Point d'entrée de l'API
+    path('/', include('app.urls')),  # Point d'entrée de l'API
     path('api/users/', include('users.urls')),  # Point d'entrée de l'API
     path('api/pokemons/', include('pokemons.urls')),
     path('api/teams/', include('teams.urls')),
@@ -32,5 +32,4 @@ urlpatterns = [
     path('', menu),
     path('signup', signup),
     path('signin', signin)
-
 ]
