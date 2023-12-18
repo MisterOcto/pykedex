@@ -19,6 +19,8 @@ from rest_framework.routers import DefaultRouter
 from app.views import home
 from app.views import menu
 from app.views import signup
+from app.views import signin
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -28,5 +30,6 @@ urlpatterns = [
     path('api/teams/', include('teams.urls')),
     path('home', home),
     path('', menu),
-    path('signup', signup)
+    path('signup', signup),
+    path('signin', signin)
 ]

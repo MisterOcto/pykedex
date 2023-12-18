@@ -4,11 +4,11 @@ body {
     background-size: 100%;
 }
 
-button {
+a {
+    text-decoration: none;
     font-family: 'Press Start 2P';
     font-size: 25px;
     margin-left: 42%;
-    margin-top: 45vh;
     color: gold;
     background-color: saddlebrown;
     padding: 20px 100px;
