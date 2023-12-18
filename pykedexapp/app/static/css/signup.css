@@ -5,7 +5,6 @@
     padding: 0;
 }
 body {
-    background-image: url('/static/image/background.jpeg');
  
     background-size: cover;
 }
@@ -43,7 +42,7 @@ input {
 
 .card button {
     margin-top: 130px;
-    margin-left: 35%;
+    margin-left: 30%;
     border: 5px solid #EBF021;
     border-radius: 8px;
     font-family: 'Press Start 2P';
@@ -66,7 +65,7 @@ input {
 
 .navbar button{
     font-family: 'Koulen';
-    margin-top: 30px;
+    margin-top: 10px;
     margin-left: 50px;
     color: #950F0F;
     font-size: 25px;
@@ -80,6 +79,14 @@ input {
     height: auto;
 }
 
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
 
 
 
