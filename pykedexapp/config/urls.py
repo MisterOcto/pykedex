@@ -27,6 +27,6 @@ urlpatterns = [
     path('api/pokemons/', include('pokemons.urls')),
     path('api/teams/', include('teams.urls')),
     path('home', home),
-    path('menu', menu),
+    path('', menu),
     path('signup', signup)
 ]
