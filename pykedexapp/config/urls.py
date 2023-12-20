@@ -26,8 +26,8 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('/', include('app.urls')),  # Point d'entrée de l'API
     path('api/users/', include('users.urls')),  # Point d'entrée de l'API
-    path('api/pokemons/', include('pokemons.urls')),
-    path('api/teams/', include('teams.urls')),
+    # path('api/pokemons/', include('pokemons.urls')),
+    # path('api/teams/', include('teams.urls')),
     path('home', home),
     path('', menu),
     path('signup', signup),
