@@ -21,3 +21,5 @@ def signin(request):
   template = loader.get_template('signin.html')
   return HttpResponse(template.render())
 
+
+
