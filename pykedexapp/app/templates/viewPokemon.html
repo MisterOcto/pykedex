@@ -1,10 +1,37 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/viewPokemon.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="topnav1">
+            <a class="logo" href="#logo">
+                <img src="{% static 'image/logo.png' %}" alt="image">
+            </a>
+            <div class="team">
+                <p>Team 1</p>
+                <p>Team 2</p>
+                <p>Team 3</p>
+            </div>
+            <a class="logout" href="logout">LOGOUT</a>
+        </div>
 
-</body>
+        <div class="topnav2">
+            <img id="icone_pokemon" src="{% static 'image/logo.png' %}" alt="image">
+            <p>INFOS POKEMON</p>
+            <div id="rond_blanc"></div>
+        </div>
+
+        <div class="div_gauche">
+            <p>GROTADMORV</p>
+            <div id="fond">
+                <img id="image_pokemon" src="{% static 'image/logo.png' %}" alt="image">
+            </div>
+        </div>
+    </body>
 </html>
+

@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Press+Start+2P&display=swap');
+
+body {
+    background-image: url("/static/image/background-home.jpg");
+    background-size: cover;
+}
+
+.topnav1 {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    overflow: hidden;
+    max-height: 6em;
+    border-radius: 30px;
+    border: 5px solid #FD5E5E;
+}
+
+.logout {
+    display: flex;
+    color: #0077C3;
+    border: 6px solid #0077C3;
+    border-radius: 10px;
+    background-color: white;
+    font-family: 'Koulen';
+    font-size: 25px;
+    padding: 2px 10px;
+    margin: 15px;
+    text-decoration: none;
+    margin-left: auto;
+}
+
+.logo img {
+    width: 7em;
+}
+
+.logout:hover {
+    background-color: white;
+    color: #FD5E5E;
+    border-color: #FD5E5E;
+}
+
+.team {
+    display: flex;
+}
+
+.team p {
+    margin-left: 20px;
+    font-size: 25px;
+    font-family: 'Koulen';
+    color: #444343;
+}
+
+.team p:hover {
+    color: #FD5E5E;
+}
+
+h1 {
+    margin: 20px;
+    font-size: 20px;
+}
+
+.topnav2 {
+    display: flex;
+    max-width: 60%;
+    align-items: center;
+    background-color: #E7DC9E;
+    overflow: hidden;
+    max-height: 6em;
+    border-radius: 30px;
+    border: 10px solid #00478E;
+}
+
+#icone_pokemon {
+    width: 5em;
+}
+
+.topnav2 p {
+    color: #F8F7E3;
+    text-shadow: 4px 4px 1px rgba(0, 0, 0, 0.75);
+    font-family: 'Press Start 2P';
+    font-size: 25px;
+}
+
+#rond_blanc {
+    border-radius: 10px;
+    background-color: white;
+    width: 1em;
+    height: 2em;
+    margin-left: 1em;
+}
+
+.div_gauche {
+    display: flex;
+    align-items: stretch;
+    border: 10px solid #676766;
+    background: #CFABF0;
+    width: 50%;
+    height: 20em;
+    overflow: hidden;
+}
+
+.div_gauche p{
+    font-family: 'Press Start 2P';
+    margin-left: auto;
+}
+
+#fond {
+    background: #D9D9D9;
+    height: 10em;
+}
+
+#image_pokemon {
+    width: 10em;
+}
