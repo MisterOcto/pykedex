@@ -20,18 +20,27 @@
             <a class="logout" href="logout">LOGOUT</a>
         </div>
 
-        <div class="topnav2">
-            <img id="icone_pokemon" src="{% static 'image/logo.png' %}" alt="image">
-            <p>INFOS POKEMON</p>
-            <div id="rond_blanc"></div>
+        <div id="topnav2">
+            <div class="topnav2-1">
+                <img id="icone_pokemon" src="{% static 'image/logo.png' %}" alt="image">
+                <p>INFOS POKEMON</p>
+                <div id="rond_blanc"></div>
+            </div>
+            <div class="topnav2-2">
+                <div id="rond_bleu"></div>
+            </div>
+            <div class="topnav2-3">
+                <img id="image_previous" src="{% static 'image/previous.png' %}" alt="image">
+                <a id="ajouter_pokemon_team" href="team">+TEAM</a>
+                <img id="image_next" src="{% static 'image/next.png' %}" alt="image">
+            </div>
         </div>
 
         <div class="div_gauche">
-            <p>GROTADMORV</p>
+{#            <p>GROTADMORV</p>#}
             <div id="fond">
                 <img id="image_pokemon" src="{% static 'image/logo.png' %}" alt="image">
             </div>
         </div>
     </body>
 </html>
-
