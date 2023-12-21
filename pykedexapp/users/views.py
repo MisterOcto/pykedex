@@ -8,7 +8,6 @@ from .models import User
 
 @api_view(['POST'])
 def register(request):
-    print(request.data)
     try:
         username = request.data.get('username')
         password = request.data.get('password')

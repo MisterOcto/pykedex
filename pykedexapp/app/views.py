@@ -24,3 +24,4 @@ def signin(request):
 def team_view(request):
   template = loader.get_template('team_view.html')
   return HttpResponse(template.render())
+
