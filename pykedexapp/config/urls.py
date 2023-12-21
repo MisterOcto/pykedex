@@ -34,6 +34,6 @@ urlpatterns = [
     path('', menu),
     path('signup', signup),
     path('signin', signin),
-    path('viewPokemon', viewPokemon)
-    path('team_view', team_view),
+    path('viewPokemon', viewPokemon),
+    path('team_view', team_view)
 ]
