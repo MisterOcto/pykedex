@@ -3,6 +3,8 @@ from django.template import loader
 from django.shortcuts import render
 from rest_framework import viewsets
 
+
+
 def home(request):
   template = loader.get_template('home.html')
   return HttpResponse(template.render())
@@ -22,3 +24,8 @@ def signin(request):
 def viewPokemon(request):
   template = loader.get_template('viewPokemon.html')
   return HttpResponse(template.render())
+
+def team_view(request):
+  template = loader.get_template('team_view.html')
+  return HttpResponse(template.render())
+
