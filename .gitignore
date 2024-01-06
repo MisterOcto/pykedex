@@ -1,1 +1,7 @@
 .idea
+app/__pycache__
+config/__pycache__
+pokemons/__pycache__
+pokemons/pokeapi/__pycache__
+team/__pycache__
+```
