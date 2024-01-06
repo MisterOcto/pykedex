@@ -3,8 +3,6 @@ from django.template import loader
 from django.shortcuts import render
 from rest_framework import viewsets
 
-
-
 def home(request):
   template = loader.get_template('home.html')
   return HttpResponse(template.render())

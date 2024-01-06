@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 class Pokemon(models.Model):
     id = models.BigAutoField(primary_key=True)
-    team_order = models.IntegerField()
+    order = models.IntegerField()
     name = models.CharField(max_length=30)
     lvl = models.IntegerField()
     xp = models.IntegerField()
@@ -30,4 +30,4 @@ class Pokemon(models.Model):
             self.number) + " - " + self.type_1 + " - " + self.type_2 + " - " + self.special_capacity + " - " + self.memo + " - " + str(
             self.atck) + " - " + str(self.defs) + " - " + str(self.atck_spe) + " - " + str(self.defs_spe) + " - " + str(
             self.speed) + " - " + str(self.hp) + " - " + str(
-            self.team_id) + " - " + self.image + " - " + self.shiny_image + " - " + str(self.shiny)
+            self.team_id) + " - " + self.image_url + " - " + self.shiny_image_url + " - " + str(self.shiny)

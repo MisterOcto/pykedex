@@ -33,6 +33,7 @@ def get_pokemon_by_team_id(request, team_id):
 @api_view(['GET'])
 def get_all_pokemon(request):
     pokemons = Pokemon.objects.all()
+    print(pokemons.values())
     return Response(pokemons.values())
 
 
