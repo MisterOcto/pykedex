@@ -155,7 +155,7 @@ h1 {
     border: 10px solid #676766;
     background: #CFABF0;
     width: 50%;
-    height: 20em;
+    height: 21em;
     overflow: hidden;
 }
 
@@ -172,4 +172,51 @@ h1 {
 
 #image_pokemon {
     width: 10em;
+}
+
+#div_central {
+    display : flex;
+}
+
+#div_droite {
+    display : flex;
+    flex-direction : column
+}
+
+#div_droite p {
+    font-family: 'Press Start 2P';
+    color: #FDF8FE;
+    text-align: center;
+}
+
+.ligne {
+    display: flex;
+    align-items: center;
+    height: 6em;
+}
+
+.not_data {
+    position: relative;
+    right: 5.1em;
+    font-size: 45px;
+}
+
+.data {
+    display: flex;
+    border-radius: 20px !important;
+    background: #FEFBDC !important;
+    color: #54554C !important;
+    font-size: 35px;
+    font-family: 'Press Start 2P';
+    padding: 15px;
+}
+.type {
+    color: #54554C !important;
+    font-size: 25px;
+    border-radius: 15px;
+    border: 4px solid #AC55CB;
+    background: #D96CFF;
+    padding: 10px;
+    margin: -4px;
+    margin-right: 1em;
 }
