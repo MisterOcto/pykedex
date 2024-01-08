@@ -4,6 +4,7 @@
 body {
     background-image: url("/static/image/background-home.jpg");
     background-size: cover;
+    margin: 0;
 }
 
 .topnav1 {
@@ -11,7 +12,7 @@ body {
     align-items: center;
     background-color: white;
     overflow: hidden;
-    max-height: 6em;
+    max-height: 5em;
     border-radius: 0 0 30px 30px;
     border: 5px solid #FD5E5E;
     border-top: 0;
@@ -32,7 +33,7 @@ body {
 }
 
 .logo img {
-    width: 7em;
+    width: 5em;
 }
 
 .logout:hover {
@@ -88,8 +89,6 @@ h1 {
     font-family: 'Press Start 2P';
     font-size: 25px;
 }
-
-
 
 #rond_blanc {
     border-radius: 10px;
@@ -150,28 +149,54 @@ h1 {
 
 .div_gauche {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 10px solid #676766;
+    flex-direction: column;
+    border: 0.4em solid #676766;
     background: #CFABF0;
-    width: 50%;
-    height: 21em;
+    width: 35vw;
+    height: 21.5em;
     overflow: hidden;
+    margin-top: 0.5em;
+}
+
+#div_gauche_interne {
+    display: flex;
+    justify-content: space-between;
+}
+
+#niveau_pokemon {
+    margin-left: 1em;
+    color: #FEFCFC;
+    text-shadow: 3px 3px 0px #000000BF;
+    font-size: 20px;
+}
+
+#nom_pokemon {
+    color: #FEFCFC;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.75);
+    margin-right: 1em;
+    font-size: 20px;
 }
 
 .div_gauche p{
     font-family: 'Press Start 2P';
-    margin-left: auto;
 }
 
 #fond {
-    text-align: center;
-    background: #D9D9D9;
-    height: 10em;
+    border: 5px solid #ac82d7;
+    background-image: url("../image/stripe.png");
+    flex: 1;
+    margin: 3px 3px 3px 3px;
+    display: flex;
+    justify-content: center;
+    /*position: absolute;*/
+    /*left: 1em;*/
+    /*top: 14em;*/
+    /*width: 30em;*/
+    /*height: 17em;*/
 }
 
 #image_pokemon {
-    width: 10em;
+    height: 16em;
 }
 
 #div_central {
@@ -183,25 +208,39 @@ h1 {
     flex-direction : column
 }
 
-#div_droite p {
-    font-family: 'Press Start 2P';
-    color: #FDF8FE;
-    text-align: center;
-}
-
 .ligne {
     display: flex;
     align-items: center;
     height: 6em;
+    margin-left: 1em;
 }
 
 .not_data {
-    position: relative;
-    right: 5.1em;
-    font-size: 45px;
+    display: flex;
+    background: #7B8194;
+    border-radius: 20px;
+    width: 40vw;
+    height: 4vh;
+    align-items: center;
+    justify-content: center;
+}
+
+#div_du_bas .not_data {
+    width: 300px;
+}
+
+.not_data p {
+    font-family: 'Press Start 2P';
+    color: #FDF8FE;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+    text-shadow: 3px 3px 0px #7B8194;
 }
 
 .data {
+    position: relative;
+    right: 0.5em;
     display: flex;
     border-radius: 20px !important;
     background: #FEFBDC !important;
@@ -209,7 +248,11 @@ h1 {
     font-size: 35px;
     font-family: 'Press Start 2P';
     padding: 15px;
+    width: 100%;
+    z-index: -1;
+    padding-left: 1em;
 }
+
 .type {
     color: #54554C !important;
     font-size: 25px;
@@ -219,4 +262,30 @@ h1 {
     padding: 10px;
     margin: -4px;
     margin-right: 1em;
+}
+
+#data_description {
+    border-radius: 20px;
+    background: #FEFBDC;
+    padding: 40px 0 0 30px;
+    height: 30vh;
+    position: relative;
+    bottom: 15px;
+    left: 10px;
+    z-index: -1;
+    width: 95%;
+}
+
+#data_description p {
+    font-family: 'Press Start 2P';
+    font-size: 35px;
+    margin: 0;
+    color: #54554C;
+}
+
+#memo {
+    font-family: 'Press Start 2P';
+    font-size: 40px;
+    position: relative;
+    bottom: 2em;
 }
