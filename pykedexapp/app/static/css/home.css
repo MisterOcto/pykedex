@@ -5,13 +5,13 @@ body {
   background-size: cover;
 }
 
-.topnav {
+.topnav1 {
   background-color: #A76464;
   overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
-.topnav a {
+.topnav1 a {
   
   color: #f2f2f2;
   
@@ -19,7 +19,7 @@ body {
   text-decoration: none;
   font-size: 17px;
 }
-.topnav .signup{
+.topnav1 .signup{
   float: right;
   border: 6px solid #D1AE30;
   border-radius: 10px;
@@ -32,7 +32,7 @@ body {
 
 }
 
-.topnav .signin{
+.topnav1 .signin{
   float: right;
   color: #3A1515;
   font-family: 'Koulen';
@@ -41,12 +41,12 @@ body {
 
 
 }
-.topnav .logo{
+.topnav1 .logo{
   float: left;
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
+.topnav1 a:hover {
   background-color: #A76464;
   color: #A76464;
 }

@@ -20,6 +20,7 @@ from app.views import home
 from app.views import menu
 from app.views import signup
 from app.views import signin
+from app.views import viewPokemon
 from app.views import team_view
 
 
@@ -33,5 +34,6 @@ urlpatterns = [
     path('', menu),
     path('signup', signup),
     path('signin', signin),
-    path('team_view', team_view),
+    path('viewPokemon', viewPokemon),
+    path('team_view', team_view)
 ]
