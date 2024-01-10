@@ -18,6 +18,12 @@
                 // Fermer la fenêtre modale
                 document.getElementById('myModal').style.display = 'none';
             }
+
+            function recupererDonneesTeams(){
+                var teamsId = localStorage.getItem("teamsId");
+                var teamsNames = localStorage.getItem("teamsName");
+                var teamsUserId = localStorage.getItem("teamsUserId");
+            }
         </script>
         <div class="background-bars">
             <hr class="hr1">
@@ -99,19 +105,11 @@
                 <a class="logout" href="/logout">Logout</a>
 
                 <ul class="teams">
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
+                    {% for team in teams %}
+                        <li>
+                            <a href="/team/{{ team.id }}">{{ team.name }}</a>
+                        </li>
+                    {% endfor %}
                         <span onclick="afficherAlerte()">+</span>
                         <form id="myModal" class="modal">
                             <label>Nom de team :</label>

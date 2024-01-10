@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
+
 body {
     background-color: black;
-   
 }
 
 a {
@@ -10,13 +10,11 @@ a {
     font-family: 'Press Start 2P';
     font-size: 2vh;
     margin-left: 42%;
-    
     color: gold;
     background-color: saddlebrown;
     padding: 20px 100px;
     border: none;
     border-radius: 20px;
- 
 }
 
 .container h1{
@@ -27,18 +25,20 @@ a {
     font-size: 60px;
     text-align: center;
     width: 100%;
- max-width: 500px;
- min-height: 100px;
- margin-top: 15vh;
- margin-bottom: 45vh;
- margin-left: 37%;
- padding-top: 5vh;
+    max-width: 500px;
+    min-height: 100px;
+    margin-top: 15vh;
+    margin-bottom: 45vh;
+    margin-left: 37%;
+    padding-top: 5vh;
 }
 
 #myVideo {
+    object-fit: cover;
     position: fixed;
     right: 0;
     bottom: 0;
+    width: 100vw;
     height: 100vh;
     z-index: -1;
 }
