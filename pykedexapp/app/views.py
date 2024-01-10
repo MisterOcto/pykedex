@@ -98,6 +98,10 @@ def signin(request):
     
   return render(request, 'signin.html')
 
+def viewPokemon(request):
+  template = loader.get_template('viewPokemon.html')
+  return HttpResponse(template.render())
+
 def team_view(request):
   pokemon_list = []
   team_list = []
