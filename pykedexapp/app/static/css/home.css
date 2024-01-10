@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); 
 @import url('https://fonts.googleapis.com/css2?family=Koulen&family=Press+Start+2P&display=swap');
+
+* {
+  list-style-type: none;
+
+}
+
 body {
   background-image: url("/static/image/background-home.jpg");
   background-size: cover;
@@ -68,30 +74,7 @@ input{
   padding-top: 20px;
 }
 
-.card {
-  display: flex;
-  font-family: 'Press Start 2P';
-  color: aliceblue;
-  border: 8px solid #924f4f;
-  background-color: #562525;
-  width: 100%;
- max-width: 600px;
- min-height: 200px;
-  margin-top: 20vh;
-  border-radius: 16px;
-  position: relative;
-}
 
-.card .image {
-  
-  margin-right:30px ;
-  position: relative;
-  width: 130px;
-  height: 130px;
-  background-color: pink;
-  top: -35px;
-  left: 20px;
-}
 .search {
   color: aliceblue;
   text-align: center;
@@ -99,76 +82,120 @@ input{
   font-size: 3vh;
 }
 
-h1 {
-  margin: 20px;
-  font-size: 20px;
+/* card */
+
+.card {
+    display: flex;
+    font-family: 'Press Start 2P';
+    color: aliceblue;
+    border: 8px solid #924f4f;
+    background-color: #562525;
+    width: 100%;
+   max-width: 600px;
+   min-height: 200px;
+    margin-top: 20vh;
+    margin-left:1vw;
+    margin-right:1vw;
+    border-radius: 16px;
+    position: relative;
+  }
+
+  .card .image {
   
-}
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    top: -50px;
+    left: 20px;
+  }
 
-.button-container {
-  margin-top: 6.5vh;
-  display: flex;
-  flex-direction: row;
-}
-.poison {
-  font-family: 'Press Start 2P';
-  color: aliceblue;
-  background-color: #F99F19;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-right: 5px;
-  border-radius: 20px;
-  border: 6px solid #C98218;
-}
+  .button-container {
+    margin-left: 7vw;
+    margin-top: 6vh;
+    display: flex;  
+    flex-direction: row;
+  }
 
-.sol {
-  font-family: 'Press Start 2P';
-  color: aliceblue;
-  background-color: #D96CFF;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-radius: 20px;
-  border: 6px solid #AC55CB;
-}
-.content {
-  flex-direction: column;
-}
+  .type1 {
+    font-family: 'Press Start 2P';
+    color: aliceblue;
+    background-color: #F99F19;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-right: 0.5vw;
+    border-radius: 20px;
+    border: 6px solid #C98218;
+  }
+  
+  .type2 {
+    font-family: 'Press Start 2P';
+    color: aliceblue;
+    background-color: #D96CFF;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 20px;
+    border: 6px solid #AC55CB;
+  }
+ 
+  .progress-bar {
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    height: 20px;
+    left: calc(13% - 75px);
+  }
+  
+  progress {
+    justify-content: center;
+    width: 98%;
+    height: 40px;
+    border: 5px solid #676766;
+    accent-color: #FDDA5E;
+    border-radius: 30px;
+  
+  }
+  
+  ::-webkit-progress-value {
+    background-color: #FDDA5E;
+    border-radius: 30px;
+  }
+  
+  progress::-webkit-progress-bar {
+    border-radius: 30px;
+    background-color: #373737;
+  
+  }
+
+  h1 {
+    margin-left: 10vw;
+    font-size: 20px;
+    
+  }
 
 .content-lvl {
-  flex-direction: column;
+  display: block;
+  margin-top: 2vh;
 }
 
-
-.progress-bar {
-  width: 100%;
-  position: absolute;
-  bottom: 30px;
-  left: 0;
-  height: 20px;
-  left: calc(13% - 75px);
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Ajustez selon vos préférences */
 }
 
-progress {
-  justify-content: center;
-  width: 98%;
-  height: 40px;
-  border: 5px solid #676766;
-  accent-color: #FDDA5E;
-  border-radius: 30px;
-
+.card .image img{
+  margin-right:2vw ;
+  width: 200px;
+  height: auto;
 }
 
-::-webkit-progress-value {
-  background-color: #FDDA5E;
-  border-radius: 30px;
-}
-
-progress::-webkit-progress-bar {
-  border-radius: 30px;
-  background-color: #373737;
+button .pokemon{
+  background-color: #A76464;
+  color: #f2f2f2;
+  font-family: 'Press Start 2P';
 
 }

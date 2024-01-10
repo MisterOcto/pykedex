@@ -105,19 +105,11 @@
                 <a class="logout" href="/logout">Logout</a>
 
                 <ul class="teams">
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
+                    {% for team in teams %}
+                        <li>
+                            <a href="/team/{{ team.id }}">{{ team.name }}</a>
+                        </li>
+                    {% endfor %}
                         <span onclick="afficherAlerte()">+</span>
                         <form id="myModal" class="modal">
                             <label>Nom de team :</label>
