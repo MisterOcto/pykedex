@@ -8,6 +8,17 @@
         <title>Document</title>
     </head>
     <body>
+        <script>
+            function afficherAlerte() {
+                // Afficher la fenêtre modale
+                document.getElementById('myModal').style.display = 'block';
+            }
+
+            function fermerModal() {
+                // Fermer la fenêtre modale
+                document.getElementById('myModal').style.display = 'none';
+            }
+        </script>
         <div class="background-bars">
             <hr class="hr1">
             <hr class="hr2">
@@ -79,7 +90,7 @@
             <hr class="hrFull">
             <hr class="hrFull">
         </div>
-        
+
         <div class="container">
             <div class="topnav">
                 <a class="logo" href="#logo">
@@ -101,7 +112,12 @@
                         <a>Mmmmmmmmmm</a>
                     </li>
                     <li>
-                        <a>+</a>
+                        <span onclick="afficherAlerte()">+</span>
+                        <form id="myModal" class="modal">
+                            <label>Nom de team :</label>
+                            <input type="text" id="NameTeam">
+                            <button onclick="fermerModal()">Valider</button>
+                        </form>
                     </li>
                 </ul>
             </div>
@@ -133,6 +149,7 @@
                         <progress class="xp" value="0" max="100"> 100% </progress>
                 </div>
             </div>
+
             <ul class="pokemon-2-6">
                 <li id="pokemon-2">
                     <div class="image"></div>
@@ -163,6 +180,7 @@
                         <progress value="100" max="100"> 100% </progress>
                     </div>
                 </li>
+
                 <li id="pokemon-3">
                     <div class="image"></div>
                     <div class="content">
@@ -192,6 +210,7 @@
                         <progress value="100" max="100"> 100% </progress>
                     </div>
                 </li>
+
                 <li id="pokemon-4">
                     <div class="image"></div>
                     <div class="content">
@@ -221,6 +240,7 @@
                         <progress value="100" max="100"> 100% </progress>
                     </div>
                 </li>
+
                 <li id="pokemon-5">
                     <div class="image"></div>
                     <div class="content">
@@ -250,6 +270,7 @@
                         <progress value="100" max="100"> 100% </progress>
                     </div>
                 </li>
+                
                 <li id="pokemon-6">
                     <div class="image"></div>
                     <div class="content">
