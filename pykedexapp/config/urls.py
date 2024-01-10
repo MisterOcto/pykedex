@@ -22,7 +22,6 @@ from app.views import signup
 from app.views import signin
 from app.views import team_view
 
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('/', include('app.urls')),  # Point d'entrée de l'API
@@ -34,4 +33,5 @@ urlpatterns = [
     path('signup', signup),
     path('signin', signin),
     path('team_view', team_view),
+    path('', include("django.contrib.auth.urls")),
 ]

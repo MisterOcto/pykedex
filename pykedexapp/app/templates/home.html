@@ -13,26 +13,31 @@
         <div class="topnav">
             <a class="logo" href="#logo">
                 <img src="{% static 'image/logo.png' %}" alt="image">
-            </a>   
-            <a class="signin" href="/signin">SIGN IN</a>
-            <a class="signup" href="/signup">SIGN UP</a>
+            </a>
+            {% if user.is_authenticated %}
+                <a class="logout" href="">SIGN IN</a>
+
+            {% else %}
+                <a class="signin" href="/signin">SIGN IN</a>
+                <a class="signup" href="/signup">SIGN UP</a>
+            {% endif %}
         </div>
         
         <div class="pokemon">
             <form method="get" action="{% url 'home' %}">
-                <p class="search">Recherchez un Pokemon</p>
-                <input type="text" name="search" value="{{ request.GET.search }}">
-                <input type="text" name="limit" value="{{ request.GET.limit }}">
-                <input type="text" name="offset" value="{{ request.GET.offset }}">
+                <p class="search">Search for a Pokemon</p>
+                <input type="text" placeholder="Research" name="search" value="{{ request.GET.search }}" required>
+                <input type="text" placeholder="Limit(default=10)" name="limit" value="{{ request.GET.limit }}" maxlength="2">
+                <input type="text" placeholder="Offset(default=0)" name="offset" value="{{ request.GET.offset }}">
 
-                <button type="submit">Rechercher</button>
+                <button type="submit">Search</button>
             </form>
         </div>
         <div class="card-container">
 
         {% for pokemon_data in pokemon_list %}
         <div class="card">
-            <div class="image"><img src="{{ pokemon_data.sprites.front_default }}" alt=""></div>
+            <div class="image"><img src="{{ pokemon_data.image_url }}" alt=""></div>
             <div class="content">
                 <h1>{{ pokemon_data.name }}</h1>
                 <div class="button-container">

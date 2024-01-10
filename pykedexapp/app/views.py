@@ -14,6 +14,12 @@ def home(request):
       limit = request.GET['limit'].lower()
       offset = request.GET['offset'].lower()
 
+
+
+      if limit == "" or offset == "":
+          limit = "10"
+          offset = "0"
+
       api_url_search_partial = f"http://localhost:8000/api/pokemons/pokeapi/get/some/" + search_term + "/" + limit + "/" + offset
 
       try:
@@ -37,12 +43,60 @@ def menu(request):
   return HttpResponse(template.render())
 
 def signup(request):
-  template = loader.get_template('signup.html')
-  return HttpResponse(template.render())
+  if request.method == 'POST':
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+
+    if username and password:
+      api_url_register = "http://localhost:8000/api/users/auth/register/"
+
+      try:
+        response = requests.post(api_url_register, json={'username': username, 'password': password})
+
+        if response.status_code == 201:
+          # L'utilisateur a été créé avec succès
+          return render(request, 'signin.html')
+        else:
+          # Affichez le message d'erreur de votre API
+          error_message = response.json().get()
+          return HttpResponseServerError(error_message. response.status_code)
+
+      except Exception as e:
+        print(f"Error: {e}")
+        return HttpResponseServerError(e)
+
+    else:
+      return HttpResponseServerError("Missing username or password")
+    
+  return render(request, 'signup.html')
 
 def signin(request):
-  template = loader.get_template('signin.html')
-  return HttpResponse(template.render())
+  if request.method == 'POST':
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+
+    if username and password:
+      api_url_register = "http://localhost:8000/api/users/auth/register/"
+
+      try:
+        response = requests.post(api_url_register, json={'username': username, 'password': password})
+
+        if response.status_code == 201:
+          # L'utilisateur a été créé avec succès
+          return render(request, 'signin.html')
+        else:
+          # Affichez le message d'erreur de votre API
+          error_message = response.json().get()
+          return HttpResponseServerError(error_message. response.status_code)
+
+      except Exception as e:
+        print(f"Error: {e}")
+        return HttpResponseServerError(e)
+
+    else:
+      return HttpResponseServerError("Missing username or password")
+    
+  return render(request, 'signin.html')
 
 def team_view(request):
   pokemon_list = []
