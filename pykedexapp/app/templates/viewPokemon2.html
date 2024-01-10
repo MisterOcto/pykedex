@@ -26,7 +26,7 @@
                     <img id="icone_pokemon" src="{% static 'image/logo.png' %}" alt="image">
                     <p>INFOS POKEMON</p>
                 </div>
-                <div id="rond_blanc" onclick="redirectToViewPokemon1()"></div>
+                <div id="rond_blanc" onclick="redirectToViewPokemon()"></div>
             </div>
             <div class="topnav2-2">
                 <div id="rond_bleu" onclick="redirectToViewPokemon2()"></div>
@@ -75,6 +75,10 @@
             <div id="data_description">
                 <p>Nature gentil.</p>
             </div>
+        </div>
+
+        <div id="loading">
+            <img src="{% static 'image/poke_ball.png' %}" alt="Chargement en cours...">
         </div>
 
     <script>

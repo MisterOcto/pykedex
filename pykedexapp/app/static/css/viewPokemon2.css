@@ -314,8 +314,7 @@ h1 {
 }
 
 #loading img {
-    animation: rotate 2s linear infinite; /* Ajout d'une animation CSS de rotation */
-    scale: 30%;
+      animation: rotate 2s linear infinite; /* Ajout d'une animation CSS de rotation */
     }
 
 @keyframes rotate {

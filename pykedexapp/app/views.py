@@ -23,6 +23,10 @@ def viewPokemon(request):
   template = loader.get_template('viewPokemon.html')
   return HttpResponse(template.render())
 
+def viewPokemon2(request):
+  template = loader.get_template('viewPokemon2.html')
+  return HttpResponse(template.render())
+
 def team_view(request):
   template = loader.get_template('team_view.html')
   return HttpResponse(template.render())
