@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="{% static 'css/viewPokemon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/pokemon_view.css' %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
@@ -26,7 +26,7 @@
                     <img id="icone_pokemon" src="{% static 'image/logo.png' %}" alt="image">
                     <p>INFOS POKEMON</p>
                 </div>
-                <div id="rond_blanc" onclick="redirectToViewPokemon1()"></div>
+                <div id="rond_blanc" onclick="redirectToViewPokemon()"></div>
             </div>
             <div class="topnav2-2">
                 <div id="rond_bleu" onclick="redirectToViewPokemon2()"></div>
@@ -77,15 +77,19 @@
             </div>
         </div>
 
+        <div id="loading">
+            <img src="{% static 'image/poke_ball.png' %}" alt="Chargement en cours...">
+        </div>
+
     <script>
-          function redirectToViewPokemon() {
+          function redirectToPokemonView1() {
             // Remplacez "nouvelle_page.html" par l'URL de la page vers laquelle vous souhaitez rediriger
-            window.location.href = "http://127.0.0.1:8000/viewPokemon";
+            window.location.href = "http://127.0.0.1:8000/pokemon_view";
           }
 
-          function redirectToViewPokemon2() {
+          function redirectToPokemonView2() {
             // Remplacez "nouvelle_page.html" par l'URL de la page vers laquelle vous souhaitez rediriger
-            window.location.href = "http://127.0.0.1:8000/viewPokemon2";
+            window.location.href = "http://127.0.0.1:8000/pokemon_view2";
           }
 
           function hideLoading() {

@@ -19,12 +19,12 @@ def signin(request):
   template = loader.get_template('signin.html')
   return HttpResponse(template.render())
 
-def viewPokemon(request):
-  template = loader.get_template('viewPokemon.html')
+def pokemon_view(request):
+  template = loader.get_template('pokemon_view.html')
   return HttpResponse(template.render())
 
-def viewPokemon2(request):
-  template = loader.get_template('viewPokemon2.html')
+def pokemon_view2(request):
+  template = loader.get_template('pokemon_view2.html')
   return HttpResponse(template.render())
 
 def team_view(request):

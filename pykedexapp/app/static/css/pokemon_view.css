@@ -126,6 +126,7 @@ h1 {
 .topnav2-3 {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 .topnav2-3 img {
@@ -314,7 +315,8 @@ h1 {
 }
 
 #loading img {
-      animation: rotate 2s linear infinite; /* Ajout d'une animation CSS de rotation */
+    animation: rotate 2s linear infinite; /* Ajout d'une animation CSS de rotation */
+    scale: 30%;
     }
 
 @keyframes rotate {

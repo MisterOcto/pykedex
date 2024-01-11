@@ -126,6 +126,7 @@ h1 {
 .topnav2-3 {
     display: flex;
     align-items: center;
+    margin-left: auto;
 }
 
 .topnav2-3 img {
