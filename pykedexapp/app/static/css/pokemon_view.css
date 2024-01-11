@@ -98,7 +98,7 @@ h1 {
 
 #rond_blanc {
     border-radius: 10px;
-    background-color: white;
+    background-color: #FEFCFC;
     width: 1em;
     height: 2em;
     right: 1em;
@@ -160,8 +160,6 @@ h1 {
     flex-direction: column;
     border: 0.4em solid #676766;
     background: #CFABF0;
-    width: 35vw;
-    height: 21.5em;
     overflow: hidden;
     margin-top: 0.5em;
 }
@@ -196,11 +194,7 @@ h1 {
     margin: 3px 3px 3px 3px;
     display: flex;
     justify-content: center;
-    /*position: absolute;*/
-    /*left: 1em;*/
-    /*top: 14em;*/
-    /*width: 30em;*/
-    /*height: 17em;*/
+    justify-content: center;
 }
 
 #image_pokemon {
@@ -209,11 +203,14 @@ h1 {
 
 #div_central {
     display : flex;
+    min-height: 58vh;
+    padding-bottom: 1em;
 }
 
 #div_droite {
     display : flex;
-    flex-direction : column
+    flex-direction : column;
+    justify-content: space-evenly;
 }
 
 .ligne {
@@ -235,6 +232,12 @@ h1 {
 
 #div_du_bas .not_data {
     width: 300px;
+}
+
+#div_du_bas{
+    position: relative;
+    left: 0.7em;
+    width: 95%;
 }
 
 .not_data p {
@@ -281,7 +284,6 @@ h1 {
     bottom: 15px;
     left: 10px;
     z-index: -1;
-    width: 95%;
 }
 
 #data_description p {
@@ -310,10 +312,6 @@ h1 {
       align-items: center;
       z-index: 9999;
     }
-
-#loading-text {
-      font-size: 24px;
-}
 
 #loading img {
     animation: rotate 2s linear infinite; /* Ajout d'une animation CSS de rotation */

@@ -36,6 +36,7 @@ urlpatterns = [
     path('signin', signin, name='signin'),
     path('', include("django.contrib.auth.urls")),
     path('pokemon_view/', pokemon_view, name='pokemon_view'),
+    path('pokemon_view2/', pokemon_view2, name='pokemon_view2'),
     path('team_view', team_view, name='team_view')
 
 
