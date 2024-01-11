@@ -22,16 +22,14 @@
 
         <div id="topnav2">
             <div class="topnav2-1">
-
                 <div id="topnav2-1-1">
                     <img id="icone_pokemon" src="{% static 'image/logo.png' %}" alt="image">
                     <p>INFOS POKEMON</p>
                 </div>
-                <div id="rond_blanc" onclick="redirectToPokemonView1()"></div>
+                <div id="rond_blanc" onclick="redirectToViewPokemon()"></div>
             </div>
             <div class="topnav2-2">
-                <div id="rond_bleu" onclick="redirectToPokemonView2()"></div>
-
+                <div id="rond_bleu" onclick="redirectToViewPokemon2()"></div>
             </div>
             <div class="topnav2-3">
                 <img id="image_previous" src="{% static 'image/previous.png' %}" alt="image">
@@ -79,6 +77,9 @@
             </div>
         </div>
 
+        <div id="loading">
+            <img src="{% static 'image/poke_ball.png' %}" alt="Chargement en cours...">
+        </div>
 
     <script>
           function redirectToPokemonView1() {
@@ -101,6 +102,5 @@
   // Simuler un chargement prolongé de 3 secondes (3000 millisecondes)
   //setTimeout(hideLoading, 3000);
     </script>
-
     </body>
 </html>
