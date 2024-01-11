@@ -21,7 +21,6 @@ from app.views import menu
 from app.views import signup
 from app.views import signin
 from app.views import pokemon_view
-from app.views import pokemon_view2
 from app.views import team_view
 
 urlpatterns = [
@@ -36,6 +35,7 @@ urlpatterns = [
     path('signin', signin, name='signin'),
     path('', include("django.contrib.auth.urls")),
     path('pokemon_view/', pokemon_view, name='pokemon_view'),
+    path('pokemon_view/<int:number>/', pokemon_view, name='pokemon_view'),
     path('team_view', team_view, name='team_view')
 
 
