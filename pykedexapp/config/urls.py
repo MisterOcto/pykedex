@@ -20,7 +20,7 @@ from app.views import home
 from app.views import menu
 from app.views import signup
 from app.views import signin
-from app.views import viewPokemon
+from app.views import pokemon_view
 from app.views import team_view
 
 urlpatterns = [
@@ -31,10 +31,10 @@ urlpatterns = [
     path('api/teams/', include('teams.urls')),
     path('home/', home, name='home'),
     path('', menu),
-    path('signup', signup),
-    path('signin', signin),
+    path('signup', signup, name='signup'),
+    path('signin', signin, name='signin'),
     path('', include("django.contrib.auth.urls")),
-    path('viewPokemon', viewPokemon),
-    path('team_view', team_view)
+    path('pokemon_view/', pokemon_view, name='pokemon_view'),
+    path('team_view', team_view, name='team_view')
 
 ]

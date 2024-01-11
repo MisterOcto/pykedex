@@ -98,8 +98,8 @@ def signin(request):
     
   return render(request, 'signin.html')
 
-def viewPokemon(request):
-  template = loader.get_template('viewPokemon.html')
+def pokemon_view(request):
+  template = loader.get_template('pokemon_view.html')
   return HttpResponse(template.render())
 
 def team_view(request):
