@@ -14,9 +14,12 @@
   </video>
     <div class="card">
         <h2>SIGN IN</h2>
-        <input placeholder="email" type="text">
-        <input placeholder="password" type="text">
-        <button class="signup">SIGN IN</button>
+        <form action="/signin" method="post" id="signinForm">
+          {% csrf_token %}
+          <input name="username" placeholder="username" type="text">
+          <input name="password" placeholder="password" type="password">
+          <button type="submit" class="signup">SIGN IN</button>
+        </form>
     </div>
 </body>
 </html>

@@ -20,9 +20,9 @@ from app.views import home
 from app.views import menu
 from app.views import signup
 from app.views import signin
-from app.views import viewPokemon
+from app.views import pokemon_view
+from app.views import pokemon_view2
 from app.views import team_view
-
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -30,10 +30,13 @@ urlpatterns = [
     path('api/users/', include('users.urls')),  # Point d'entrée de l'API
     path('api/pokemons/', include('pokemons.urls')),
     path('api/teams/', include('teams.urls')),
-    path('home', home),
+    path('home/', home, name='home'),
     path('', menu),
     path('signup', signup),
     path('signin', signin),
-    path('viewPokemon', viewPokemon),
+    path('pokemon_view', pokemon_view),
+    path('pokemon_view2', pokemon_view2),
+    path('', include("django.contrib.auth.urls")),
     path('team_view', team_view)
+
 ]

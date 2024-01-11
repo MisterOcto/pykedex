@@ -5,7 +5,8 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{% static 'css/team_view.css' %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>Pykedex - Teams</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}">
     </head>
     <body>
         <script>
@@ -17,6 +18,12 @@
             function fermerModal() {
                 // Fermer la fenêtre modale
                 document.getElementById('myModal').style.display = 'none';
+            }
+
+            function recupererDonneesTeams(){
+                var teamsId = localStorage.getItem("teamsId");
+                var teamsNames = localStorage.getItem("teamsName");
+                var teamsUserId = localStorage.getItem("teamsUserId");
             }
         </script>
         <div class="background-bars">
@@ -99,19 +106,11 @@
                 <a class="logout" href="/logout">Logout</a>
 
                 <ul class="teams">
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
-                        <a>Mmmmmmmmmm</a>
-                    </li>
-                    <li>
+                    {% for team in teams %}
+                        <li>
+                            <a href="/team/{{ team.id }}">{{ team.name }}</a>
+                        </li>
+                    {% endfor %}
                         <span onclick="afficherAlerte()">+</span>
                         <form id="myModal" class="modal">
                             <label>Nom de team :</label>
