@@ -14,8 +14,6 @@ def home(request):
       limit = request.GET['limit'].lower()
       offset = request.GET['offset'].lower()
 
-
-
       if limit == "" or offset == "":
           limit = "10"
           offset = "0"
@@ -75,14 +73,14 @@ def signin(request):
     password = request.POST.get('password')
 
     if username and password:
-      api_url_register = "http://localhost:8000/api/users/auth/register/"
+      api_url_register = "http://localhost:8000/api/users/auth/login/"
 
       try:
         response = requests.post(api_url_register, json={'username': username, 'password': password})
 
-        if response.status_code == 201:
+        if response.status_code == 200:
           # L'utilisateur a été créé avec succès
-          return render(request, 'signin.html')
+          return render(request, 'home.html')
         else:
           # Affichez le message d'erreur de votre API
           error_message = response.json().get()
@@ -97,8 +95,8 @@ def signin(request):
     
   return render(request, 'signin.html')
 
-def viewPokemon(request):
-  template = loader.get_template('viewPokemon.html')
+def pokemon_view(request):
+  template = loader.get_template('pokemon_view.html')
   return HttpResponse(template.render())
 
 def team_view(request):

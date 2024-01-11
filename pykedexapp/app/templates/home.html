@@ -10,7 +10,7 @@
 
     </head>
     <body>
-        <div class="topnav1">
+        <div class="topnav">
             <a class="logo" href="#logo">
                 <img src="{% static 'image/logo.png' %}" alt="image">
             </a>
@@ -36,7 +36,7 @@
         <div class="card-container">
 
         {% for pokemon_data in pokemon_list %}
-        <a href="{% url 'pokemon_view' %}"></div>
+        <a href="{% url 'pokemon_view' %}">
             <div class="card">
                 <div class="image"><img src="{{ pokemon_data.image_url }}" alt=""></div>
                 <div class="content">
