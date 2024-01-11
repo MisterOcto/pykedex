@@ -10,7 +10,7 @@
 
     </head>
     <body>
-        <div class="topnav1">
+        <div class="topnav">
             <a class="logo" href="#logo">
                 <img src="{% static 'image/logo.png' %}" alt="image">
             </a>
@@ -36,24 +36,26 @@
         <div class="card-container">
 
         {% for pokemon_data in pokemon_list %}
-        <div class="card">
-            <div class="image"><img src="{{ pokemon_data.image_url }}" alt=""></div>
-            <div class="content">
-                <h1>{{ pokemon_data.name }}</h1>
-                <div class="button-container">
-                    {% for type in pokemon_data.types %}
-                        <span class="{% if forloop.first %}type1{% else %}type2{% endif %}">{{ type.type.name }}</span>
-                    {% endfor %}
+        <a href="{% url 'pokemon_view' %}">
+            <div class="card">
+                <div class="image"><img src="{{ pokemon_data.image_url }}" alt=""></div>
+                <div class="content">
+                    <h1>{{ pokemon_data.name }}</h1>
+                    <div class="button-container">
+                        {% for type in pokemon_data.types %}
+                            <span class="{% if forloop.first %}type1{% else %}type2{% endif %}">{{ type.type.name }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="content-lvl">
+                    <p>LVL. 1</p>
+                    <p>{{ pokemon_data.stats.0.base_stat }} HP</p>
+                </div>
+                <div class="progress-bar">
+                    <progress class="progress1" value="32" max="100"> 32% </progress>
                 </div>
             </div>
-            <div class="content-lvl">
-                <p>LVL. 1</p>
-                <p>{{ pokemon_data.stats.0.base_stat }} HP</p>
-            </div>
-            <div class="progress-bar">
-                <progress class="progress1" value="32" max="100"> 32% </progress>
-            </div>
-        </div>
+        </a>
     {% endfor %}
     </div>
     </body>
