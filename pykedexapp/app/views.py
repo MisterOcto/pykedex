@@ -53,7 +53,7 @@ def signup(request):
 
         if response.status_code == 201:
           # L'utilisateur a été créé avec succès
-          return render(request, 'signin.html')
+          return redirect('signin')
         else:
           # Affichez le message d'erreur de votre API
           error_message = response.json().get()
