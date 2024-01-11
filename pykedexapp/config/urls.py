@@ -32,11 +32,11 @@ urlpatterns = [
     path('api/teams/', include('teams.urls')),
     path('home/', home, name='home'),
     path('', menu),
-    path('signup', signup),
-    path('signin', signin),
-    path('pokemon_view', pokemon_view),
-    path('pokemon_view2', pokemon_view2),
+    path('signup', signup, name='signup'),
+    path('signin', signin, name='signin'),
     path('', include("django.contrib.auth.urls")),
-    path('team_view', team_view)
+    path('pokemon_view/', pokemon_view, name='pokemon_view'),
+    path('team_view', team_view, name='team_view')
+
 
 ]

@@ -3,6 +3,7 @@ from django.template import loader
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.http import HttpResponseServerError
+from django.shortcuts import redirect
 
 import requests
 
@@ -85,7 +86,7 @@ def pokemon_view2(request):
 
         if response.status_code == 200:
           # L'utilisateur a été créé avec succès
-          return render(request, 'home.html')
+          return redirect('home/')
         else:
           # Affichez le message d'erreur de votre API
           error_message = response.json().get()
@@ -142,4 +143,4 @@ def team_view(request):
       'pokemon_list': pokemon_list,
     }
     return render(request, 'team_view.html', context)
-  return render(request, 'team_view.html')
+  return redirect('signin')
