@@ -79,11 +79,6 @@ def signin(request):
       try:
         response = requests.post(api_url_register, json={'username': username, 'password': password})
 
-
-
-def pokemon_view2(request):
-  template = loader.get_template('pokemon_view2.html')
-
         if response.status_code == 200:
           # L'utilisateur a été créé avec succès
           return redirect('home/')
@@ -103,6 +98,10 @@ def pokemon_view2(request):
 
 def pokemon_view(request):
   template = loader.get_template('pokemon_view.html')
+  return HttpResponse(template.render())
+
+def pokemon_view2(request):
+  template = loader.get_template('pokemon_view2.html')
   return HttpResponse(template.render())
 
 def team_view(request):
