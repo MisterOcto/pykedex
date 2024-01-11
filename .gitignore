@@ -4,4 +4,5 @@ pykedexapp/config/__pycache__
 pykedexapp/pokemons/__pycache__
 pykedexapp/pokemons/pokeapi/__pycache__
 pykedexapp/teams/__pycache__
+pykedexapp/db.sqlite3
 ```
