@@ -62,6 +62,7 @@ def get_pokemon_from_pokeapi_by_name(request, name):
         return HttpResponseBadRequest({'message': 'Error in fetching data from PokeAPI'})
 
 
+
 @api_view(['GET'])
 def get_pokemon_from_pokeapi_by_id(request, id):
     """

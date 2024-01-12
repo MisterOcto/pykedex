@@ -3,6 +3,7 @@ from django.template import loader
 from django.shortcuts import render
 from rest_framework import viewsets
 from django.http import HttpResponseServerError
+from django.shortcuts import redirect
 
 import requests
 
@@ -13,8 +14,6 @@ def home(request):
       search_term = request.GET['search'].lower()
       limit = request.GET['limit'].lower()
       offset = request.GET['offset'].lower()
-
-
 
       if limit == "" or offset == "":
           limit = "10"
@@ -36,7 +35,6 @@ def home(request):
       return render(request, 'home.html', context)
 
   return render(request, 'home.html')
-
 
 def menu(request):
   template = loader.get_template('menu.html')
@@ -76,14 +74,14 @@ def signin(request):
     password = request.POST.get('password')
 
     if username and password:
-      api_url_register = "http://localhost:8000/api/users/auth/register/"
+      api_url_register = "http://localhost:8000/api/users/auth/login/"
 
       try:
         response = requests.post(api_url_register, json={'username': username, 'password': password})
 
-        if response.status_code == 201:
+        if response.status_code == 200:
           # L'utilisateur a été créé avec succès
-          return render(request, 'signin.html')
+          return redirect('home/')
         else:
           # Affichez le message d'erreur de votre API
           error_message = response.json().get()
@@ -100,6 +98,10 @@ def signin(request):
 
 def pokemon_view(request):
   template = loader.get_template('pokemon_view.html')
+  return HttpResponse(template.render())
+
+def pokemon_view2(request):
+  template = loader.get_template('pokemon_view2.html')
   return HttpResponse(template.render())
 
 def team_view(request):
@@ -140,4 +142,4 @@ def team_view(request):
       'pokemon_list': pokemon_list,
     }
     return render(request, 'team_view.html', context)
-  return render(request, 'team_view.html')
+  return redirect('signin')

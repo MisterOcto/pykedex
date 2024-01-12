@@ -77,7 +77,6 @@ h1 {
     border: 0.4em solid #00478E;
     border-left: 0px;
     z-index: 1;
-
     justify-content: space-between;
 }
 
@@ -327,5 +326,4 @@ h1 {
   to {
     transform: rotate(360deg);
   }
-
 }
