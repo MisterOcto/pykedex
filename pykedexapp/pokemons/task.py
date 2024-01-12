@@ -34,7 +34,7 @@ def get_pokemon_object(pokemon_data):
 
 def cache_all_pokemon_data():
     if input('Voulez-vous mettre en cache les données des pokemons? (Prend plusieurs minutes mais recherches instantanées) [y/n] ') == 'y':
-        pokeapi_url = 'https://pokeapi.co/api/v2/pokemon?limit=10&offset=0'
+        pokeapi_url = 'https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0'
         response = requests.get(pokeapi_url)
         if response.status_code == 200:
             print('Caching all pokemon data...')
@@ -54,6 +54,7 @@ def cache_all_pokemon_data():
             cache.set('all_pokemon', all_pokemon_data, timeout=None)
             print('Mise en cache terminée.')
     else:
+
         print('Annulation de la mise en cache des données des pokemons.')
 
 
