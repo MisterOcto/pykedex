@@ -37,6 +37,4 @@ urlpatterns = [
     path('pokemon_view/', pokemon_view, name='pokemon_view'),
     path('pokemon_view/<int:number>/', pokemon_view, name='pokemon_view'),
     path('team_view', team_view, name='team_view')
-
-
 ]
