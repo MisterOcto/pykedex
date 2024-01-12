@@ -107,8 +107,10 @@ def signin(request):
 
 
 def pokemon_view(request):
-    template = loader.get_template('pokemon_view.html')
-    return HttpResponse(template.render())
+    print(request)
+    print(request.GET['number'])
+    api_url_get_team = f"http://localhost:8000/api/pokemons/pokeapi/get/one/" + request.GET['number']
+    return render(request, 'pokemon_view.html', context={'pokemon': requests.get(api_url_get_team).json()})
 
 
 def pokemon_view2(request):
