@@ -10,8 +10,9 @@ urlpatterns = [
     path('pokeapi/get/one/<str:name>', p_views.get_pokemon_from_pokeapi_by_name),
     path('pokeapi/get/one/<int:id>', p_views.get_pokemon_from_pokeapi_by_id),
     path('pokeapi/get/some/<int:limit>/<int:offset>', p_views.get_some_pokemon_from_pokeapi),
-    path('pokeapi/get/some/<str:search_letters>/<int:limit>/<int:offset>', p_views.get_some_pokemon_from_pokeapi_by_letters),
+    path('pokeapi/get/some/<str:search_letters>/<int:limit>/<int:offset>', p_views.get_pokemon_from_pokeapi_by_search_term),
     path('pokeapi/get/all', p_views.get_all_pokemon_from_pokeapi),
+    path('pokeapi/get/fetch_progress/<str:key>', p_views.get_pokemon_fetch_progress),
 
     # [GET] API
     # The following are the endpoints for the API (pokemons saved in the database)
