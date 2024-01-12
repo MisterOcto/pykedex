@@ -5,11 +5,11 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{% static 'css/pokemon_view2.css' %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
+        <title>Pykedex - PokemonView</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}">    </head>
     <body>
         <div class="topnav1">
-            <a class="logo" href="#logo">
+            <a class="logo" href="/home">
                 <img src="{% static 'image/logo.png' %}" alt="image">
             </a>
             <div class="team">
@@ -50,24 +50,24 @@
             </div>
             <div id="div_droite">
                 <div class="ligne">
-                    <div class="not_data"><p>HP</p></div>
-                    <div class="data_hp">
-                        <progress id="progress-bar" value="32" max="100"></progress>
-                        <p id="hp">32/32</p>
+
+                    <div class="not_data"><p>N°</p></div>
+                    <p class="data">{{ pokemon_data.number }}</p>
+                </div>
+                <div class="ligne">
+                    <div class="not_data"><p>Nom</p></div>
+                    <p class="data">{{ pokemon_data.name }}</p>
+                </div>
+                <div class="ligne">
+                    <div class="not_data"><p>Type</p></div>
+                    <div class="data">
+                        {% for type in pokemon_data.types %}
+                            <span class="{% if forloop.first %}type1{% else %}type2{% endif %}">{{ type.type.name }}</span>
+                        {% endfor %}
+                        {# <p class="type">{{ type.type.name }}</p>
+                        <p class="type">feu</p> #}
                     </div>
 
-                </div>
-                <div class="ligne">
-                    <div class="not_data"><p>ATTACK</p></div>
-                    <p class="data">Salameche</p>
-                </div>
-                <div class="ligne">
-                    <div class="not_data"><p>DEFENSE</p></div>
-                    <p class="data">Aucun</p>
-                </div>
-                <div class="ligne">
-                    <div class="not_data"><p>SP.ATK</p></div>
-                    <p class="data">Aucun</p>
                 </div>
                 <div class="ligne">
                     <div class="not_data"><p>SP.DEF</p></div>

@@ -5,12 +5,11 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="{% static 'css/pokemon_view.css' %}">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Pykedex - PokemonView</title>
-        <link rel="icon" type="image/x-icon" href="{% static 'image/favicon.ico' %}">
+        <title>Document</title>
     </head>
     <body>
         <div class="topnav1">
-            <a class="logo" href="/home">
+            <a class="logo" href="#logo">
                 <img src="{% static 'image/logo.png' %}" alt="image">
             </a>
             <div class="team">
@@ -54,18 +53,15 @@
             <div id="div_droite">
                 <div class="ligne">
                     <div class="not_data"><p>N°</p></div>
-                    {# <p class="data">{{ pokemon_data.number }}</p> #}
+                    <p class="data">011</p>
                 </div>
                 <div class="ligne">
                     <div class="not_data"><p>Nom</p></div>
-                    {# <p class="data">{{ pokemon_data.name }}</p> #}
+                    <p class="data">Salameche</p>
                 </div>
                 <div class="ligne">
                     <div class="not_data"><p>Type</p></div>
                     <div class="data">
-                        {# {% for type in pokemon_data.types %}
-                            <span class="{% if forloop.first %}type1{% else %}type2{% endif %}">{{ type.type.name }}</span>
-                        {% endfor %} #}
                         <p class="type">Poison</p>
                         <p class="type">feu</p>
                     </div>
@@ -96,12 +92,14 @@
           }
 
           function hideLoading() {
-              document.getElementById('loading').style.display = 'none';
-          }
+    document.getElementById('loading').style.display = 'none';
+  }
 
-          document.getElementById('loading').style.display = 'flex';
+  // Afficher l'élément de chargement au début
+  document.getElementById('loading').style.display = 'flex';
 
-          setTimeout(hideLoading, 3000);
+  // Simuler un chargement prolongé de 3 secondes (3000 millisecondes)
+  //setTimeout(hideLoading, 3000);
     </script>
 
     </body>
