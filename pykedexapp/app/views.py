@@ -67,6 +67,10 @@ def signup(request):
                 print(f"Error: {e}")
                 return HttpResponseServerError(e)
 
+
+        if response.status_code == 201:
+          # L'utilisateur a été créé avec succès
+          return redirect('signin')
         else:
             return HttpResponseServerError("Missing username or password")
 
