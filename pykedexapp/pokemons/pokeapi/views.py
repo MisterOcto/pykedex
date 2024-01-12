@@ -3,6 +3,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.core.cache import cache
 
+
 def fetch_with_requests(url):
     response = requests.get(url)
     if response.status_code == 200:
@@ -10,16 +11,20 @@ def fetch_with_requests(url):
     else:
         return None
 
+
 def update_progress(progress_key, increment=1):
     current_progress = cache.get(progress_key, 0)
     cache.set(progress_key, current_progress + increment, timeout=3600)
 
+
 def get_pokemon_species_data(species_url):
     species_data = fetch_with_requests(species_url) or {}
     return next(
-        (entry['flavor_text'] for entry in species_data.get('flavor_text_entries', []) if entry['language']['name'] == 'en'),
+        (entry['flavor_text'] for entry in species_data.get('flavor_text_entries', []) if
+         entry['language']['name'] == 'en'),
         ''
     )
+
 
 def get_pokemon_detail(pokemon_url, progress_key=None):
     pokemon_data = fetch_with_requests(pokemon_url)
@@ -56,6 +61,7 @@ def get_pokemon_detail(pokemon_url, progress_key=None):
         update_progress(progress_key)
     return pokemon
 
+
 def get_pokemon_data(request, query_type, query_value=None, limit=1, offset=0):
     cache_key = 'all_pokemon'
     all_pokemon_data = cache.get(cache_key)
@@ -87,24 +93,37 @@ def get_pokemon_data(request, query_type, query_value=None, limit=1, offset=0):
                 else:
                     return Response({'message': 'Pokemon not found or error in PokeAPI'}, status=404)
 
+
             elif query_type == 'search':
                 pokeapi_url = f'https://pokeapi.co/api/v2/pokemon?limit=1118&offset=0'
                 response = requests.get(pokeapi_url)
                 if response.status_code == 200:
                     all_pokemon_data = response.json()['results']
-                    pokemon_data = [p for p in all_pokemon_data if query_value in p['name']][offset:offset + limit]
+                    detailed_pokemon_data = []
+                    for p in all_pokemon_data:
+                        if query_value in p['name']:
+                            detailed_pokemon = get_pokemon_detail(p['url'])
+                            if detailed_pokemon:
+                                detailed_pokemon_data.append(detailed_pokemon)
+                    pokemon_data = detailed_pokemon_data[offset:offset + limit]
                     if not pokemon_data:
                         return Response([], status=404)
                     return Response(pokemon_data)
                 else:
                     return Response({'message': 'Pokemon not found or error in PokeAPI'}, status=404)
 
+
             elif query_type == 'some':
                 pokeapi_url = f'https://pokeapi.co/api/v2/pokemon?limit={limit}&offset={offset}'
                 response = requests.get(pokeapi_url)
                 if response.status_code == 200:
                     all_pokemon_data = response.json()['results']
-                    return Response(all_pokemon_data)
+                    detailed_pokemon_data = []
+                    for p in all_pokemon_data:
+                        detailed_pokemon = get_pokemon_detail(p['url'])
+                        if detailed_pokemon:
+                            detailed_pokemon_data.append(detailed_pokemon)
+                    return Response(detailed_pokemon_data)
                 else:
                     return Response({'message': 'Pokemon not found or error in PokeAPI'}, status=404)
 
@@ -113,9 +132,15 @@ def get_pokemon_data(request, query_type, query_value=None, limit=1, offset=0):
                 response = requests.get(pokeapi_url)
                 if response.status_code == 200:
                     all_pokemon_data = response.json()['results']
-                    return Response(all_pokemon_data)
+                    detailed_pokemon_data = []
+                    for p in all_pokemon_data:
+                        detailed_pokemon = get_pokemon_detail(p['url'])
+                        if detailed_pokemon:
+                            detailed_pokemon_data.append(detailed_pokemon)
+                    return Response(detailed_pokemon_data)
                 else:
                     return Response({'message': 'Pokemon not found or error in PokeAPI'}, status=404)
+
 
             else:
                 return Response({'message': 'Invalid query type'}, status=400)
@@ -123,25 +148,31 @@ def get_pokemon_data(request, query_type, query_value=None, limit=1, offset=0):
         print(e)
         return Response({'message': 'Invalid query type'}, status=400)
 
+
 @api_view(['GET'])
 def get_pokemon_from_pokeapi_by_name(request, name):
     return get_pokemon_data(request, 'name', name)
+
 
 @api_view(['GET'])
 def get_pokemon_from_pokeapi_by_id(request, id):
     return get_pokemon_data(request, 'id', str(id))
 
+
 @api_view(['GET'])
 def get_some_pokemon_from_pokeapi(request, limit, offset):
     return get_pokemon_data(request, 'some', limit=limit, offset=offset)
+
 
 @api_view(['GET'])
 def get_pokemon_from_pokeapi_by_search_term(request, search_letters, limit, offset):
     return get_pokemon_data(request, 'search', search_letters, limit, offset)
 
+
 @api_view(['GET'])
 def get_all_pokemon_from_pokeapi(request):
     return get_pokemon_data(request, 'all')
+
 
 @api_view(['GET'])
 def get_pokemon_fetch_progress(request, key):
