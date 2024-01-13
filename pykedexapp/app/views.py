@@ -4,7 +4,6 @@ from django.shortcuts import render
 from rest_framework import viewsets
 from django.http import HttpResponseServerError
 from django.shortcuts import redirect
-
 import requests
 
 
@@ -109,6 +108,7 @@ def signin(request):
 def pokemon_view(request):
     template = loader.get_template('pokemon_view.html')
     return HttpResponse(template.render())
+    # return render(request, 'pokemon_view.html', context=Pokemon.objects.get(id=request.POST.get('pokemon_id')))
 
 
 def pokemon_view2(request):

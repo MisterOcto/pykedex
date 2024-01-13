@@ -35,17 +35,17 @@
 
             </div>
             <div class="topnav2-3">
-                <img id="image_previous" src="{% static 'image/previous.png' %}" alt="image">
-                <a id="ajouter_pokemon_team" href="/team_view">+TEAM</a>
-                <img id="image_next" src="{% static 'image/next.png' %}" alt="image">
+                <img id="image_previous" src="{% static 'image/previous.png' %}" alt="image" onclick="redirectToPokemonPrevious()">
+                <a id="ajouter_pokemon_team" href="{% url 'team_view' %}">+TEAM</a>
+                <img id="image_next" src="{% static 'image/next.png' %}" alt="image" onclick="redirectToPokemonNext()">
             </div>
         </div>
 
         <div id="div_central">
             <div class="div_gauche">
                 <div id="div_gauche_interne">
-                    <p id="niveau_pokemon">LVL.36</p>
-                    <p id="nom_pokemon">GROTADMORV</p>
+                    <p id="niveau_pokemon">{{ pokemon_data.lvl }}</p>
+                    <p id="nom_pokemon">{{ pokemon_data.name }}</p>
                 </div>
                 <div id="fond">
                     <img id="image_pokemon" src="{% static 'image/logo.png' %}" alt="image">
@@ -54,20 +54,18 @@
             <div id="div_droite">
                 <div class="ligne">
                     <div class="not_data"><p>N°</p></div>
-                    {# <p class="data">{{ pokemon_data.number }}</p> #}
+                    <p class="data">{{ pokemon_data.number }}</p>
                 </div>
                 <div class="ligne">
                     <div class="not_data"><p>Nom</p></div>
-                    {# <p class="data">{{ pokemon_data.name }}</p> #}
+                    <p class="data">{{ pokemon_data.name }}</p>
                 </div>
                 <div class="ligne">
                     <div class="not_data"><p>Type</p></div>
                     <div class="data">
-                        {# {% for type in pokemon_data.types %}
-                            <span class="{% if forloop.first %}type1{% else %}type2{% endif %}">{{ type.type.name }}</span>
-                        {% endfor %} #}
-                        <p class="type">Poison</p>
-                        <p class="type">feu</p>
+                         {% for type in pokemon_data.types %}
+                            <p class="{% if forloop.first %}type1{% else %}type2{% endif %}">{{ type.type.name }}</p>
+                         {% endfor %}
                     </div>
                 </div>
                 <div class="ligne">
@@ -79,29 +77,29 @@
         <div id="div_du_bas">
             <div class="not_data"><p>Memo</p></div>
             <div id="data_description">
-                <p>Nature gentil.</p>
+                <p>{{ pokemon_data.memo }}</p>
             </div>
         </div>
 
 
     <script>
           function redirectToPokemonView1() {
-            // Remplacez "nouvelle_page.html" par l'URL de la page vers laquelle vous souhaitez rediriger
-            window.location.href = "http://127.0.0.1:8000/pokemon_view";
+            window.location.href = "{% url 'pokemon_view' %}?number={{ pokemon_data.number }}";
           }
 
           function redirectToPokemonView2() {
-            // Remplacez "nouvelle_page.html" par l'URL de la page vers laquelle vous souhaitez rediriger
-            window.location.href = "http://127.0.0.1:8000/pokemon_view2";
+            window.location.href = "{% url 'pokemon_view2' %}?number={{ pokemon_data.number }}";
           }
 
-          function hideLoading() {
-              document.getElementById('loading').style.display = 'none';
+          function redirectToPokemonNext() {
+            var number = {{ pokemon_data.number }} + 1;
+            window.location.href = "{% url 'pokemon_view' %}?number=" + number;
           }
 
-          document.getElementById('loading').style.display = 'flex';
-
-          setTimeout(hideLoading, 3000);
+          function redirectToPokemonPrevious() {
+            var number = {{ pokemon_data.number }} - 1;
+            window.location.href = "{% url 'pokemon_view' %}?number=" + number;
+          }
     </script>
 
     </body>

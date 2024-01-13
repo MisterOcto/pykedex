@@ -32,9 +32,9 @@
                 <div id="rond_bleu" onclick="redirectToPokemonView2()"></div>
             </div>
             <div class="topnav2-3">
-                <img id="image_previous" src="{% static 'image/previous.png' %}" alt="image">
-                <a id="ajouter_pokemon_team" href="/team_view">+TEAM</a>
-                <img id="image_next" src="{% static 'image/next.png' %}" alt="image">
+                <img id="image_previous" src="{% static 'image/previous.png' %}" alt="image" onclick="redirectToPokemonPrevious()">
+                <a id="ajouter_pokemon_team" href="{% url 'team_view' %}">+TEAM</a>
+                <img id="image_next" src="{% static 'image/next.png' %}" alt="image" onclick="redirectToPokemonNext()">
             </div>
         </div>
 
@@ -61,11 +61,7 @@
                 <div class="ligne">
                     <div class="not_data"><p>Type</p></div>
                     <div class="data">
-                        {% for type in pokemon_data.types %}
-                            <span class="{% if forloop.first %}type1{% else %}type2{% endif %}">{{ type.type.name }}</span>
-                        {% endfor %}
-                        {# <p class="type">{{ type.type.name }}</p>
-                        <p class="type">feu</p> #}
+                        <p class="type">feu</p>
                     </div>
 
                 </div>
@@ -92,13 +88,21 @@
 
     <script>
         function redirectToPokemonView1() {
-            // Remplacez "nouvelle_page.html" par l'URL de la page vers laquelle vous souhaitez rediriger
-            window.location.href = "http://127.0.0.1:8000/pokemon_view";
+            window.location.href = "{% url 'pokemon_view' %}?number={{ pokemon_data.number }}";
           }
 
           function redirectToPokemonView2() {
-            // Remplacez "nouvelle_page.html" par l'URL de la page vers laquelle vous souhaitez rediriger
-            window.location.href = "http://127.0.0.1:8000/pokemon_view2";
+            window.location.href = "{% url 'pokemon_view2' %}?number={{ pokemon_data.number }}";
+          }
+
+          function redirectToPokemonNext() {
+            var number = {{ pokemon_data.number }} + 1;
+            window.location.href = "{% url 'pokemon_view2' %}?number=" + number;
+          }
+
+          function redirectToPokemonPrevious() {
+            var number = {{ pokemon_data.number }} - 1;
+            window.location.href = "{% url 'pokemon_view2' %}?number=" + number;
           }
     </script>
     </body>
